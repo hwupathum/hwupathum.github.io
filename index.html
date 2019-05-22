@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="converter.js"></script>
+	<script type="text/javascript" src="fm_mali.js"></script>
+	<style> 
+		@font-face {
+		font-family: wijesekara;
+		src: url('fm_mali2.ttf');
+		}
+	</style>
+</head>
+<body>
+	Type here <br>
+	<textarea onkeyup="startText();" onselect="startText();" onclick="startText();" style="font-size: 12pt;
+							width: 600px;" name="box1" id="box1" rows="7"></textarea>
+	<br> Unicode <br>
+    <textarea style="font-size: 14pt; font-family: Potha, Malithi Web , Arial Unicode MS;
+							width: 600px;" name="box2" id="box2" rows="7"></textarea>
+	<br> FM Malithi <br>
+	<textarea style="font-size: 14pt; font-family: wijesekara;width: 600px;" id="box3" cols="30" rows="10"></textarea>
+</body>
+</html>
