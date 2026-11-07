@@ -4,7 +4,6 @@ minimal_mistakes_skin: default # air, aqua, contrast, dark, dirt, neon, mint, pl
 
 locale: en-US
 title: Udara Pathum
-subtitle: Articles on PQC, IAM and TLS
 name: Udara Pathum
 description: >-
   Articles on post-quantum cryptography, identity and access management, TLS
@@ -20,18 +19,30 @@ search_full_content: true
 
 author:
   name: Udara Pathum
-  avatar: # e.g. /assets/images/avatar.jpg
+  avatar: /assets/images/avatar.svg # placeholder; replace with your photo (e.g. avatar.jpg)
   bio: Software engineer at WSO2. Writing about post-quantum cryptography, IAM and TLS.
   links:
     - label: GitHub
       icon: fab fa-fw fa-github
       url: https://github.com/hwupathum
+    - label: LinkedIn
+      icon: fab fa-fw fa-linkedin
+      url: https://www.linkedin.com/in/your-profile/ # placeholder
+    - label: Medium
+      icon: fab fa-fw fa-medium
+      url: https://medium.com/@your-handle # placeholder
 
 footer:
   links:
     - label: GitHub
       icon: fab fa-fw fa-github
       url: https://github.com/hwupathum
+    - label: LinkedIn
+      icon: fab fa-fw fa-linkedin
+      url: https://www.linkedin.com/in/your-profile/ # placeholder
+    - label: Medium
+      icon: fab fa-fw fa-medium
+      url: https://medium.com/@your-handle # placeholder
 
 markdown: kramdown
 permalink: /:categories/:title/
