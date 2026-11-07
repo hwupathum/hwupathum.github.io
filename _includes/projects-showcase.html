@@ -1,0 +1,41 @@
+{% assign projects = site.projects | sort: "order" %}
+{% assign categories = projects | map: "category" | uniq | sort %}
+<div class="filters" role="group" aria-label="Filter projects">
+  <button class="filters__btn is-active" data-filter="all">All</button>
+  {% for cat in categories %}
+    <button class="filters__btn" data-filter="{{ cat | slugify }}">{{ cat }}</button>
+  {% endfor %}
+</div>
+
+<div class="cards" id="projects">
+  {% for project in projects %}
+    <article class="card" data-category="{{ project.category | slugify }}">
+      <div class="card__meta">
+        <span class="card__badge">{{ project.category }}</span>
+        {% if project.period %}<span>{{ project.period }}</span>{% endif %}
+      </div>
+      <h3 class="card__title">{{ project.title }}</h3>
+      {% if project.excerpt %}<p class="card__text">{{ project.excerpt | strip_html }}</p>{% endif %}
+      {% if project.tags %}
+        <div class="card__tags">{% for tag in project.tags %}<span>{{ tag }}</span>{% endfor %}</div>
+      {% endif %}
+      <div class="card__links">
+        {% if project.repo %}<a href="{{ project.repo }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Code</a>{% endif %}
+        {% if project.url %}<a href="{{ project.url }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Website</a>{% endif %}
+      </div>
+    </article>
+  {% endfor %}
+</div>
+
+<script>
+  document.querySelectorAll(".filters__btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".filters__btn").forEach(function (b) { b.classList.remove("is-active"); });
+      btn.classList.add("is-active");
+      var filter = btn.dataset.filter;
+      document.querySelectorAll("#projects .card").forEach(function (card) {
+        card.hidden = filter !== "all" && card.dataset.category !== filter;
+      });
+    });
+  });
+</script>

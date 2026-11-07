@@ -1,0 +1,19 @@
+{% assign talks = site.talks | sort: "date" | reverse %}
+<div class="cards">
+  {% for talk in talks %}
+    <article class="card">
+      <div class="card__meta">
+        <span>{{ talk.date | date: "%d %b %Y" }}</span>
+        {% if talk.location %}<span>· {{ talk.location }}</span>{% endif %}
+      </div>
+      <h3 class="card__title">{{ talk.title }}</h3>
+      {% if talk.event %}<div class="card__sub"><i class="fas fa-microphone" aria-hidden="true"></i> {{ talk.event }}</div>{% endif %}
+      {% if talk.excerpt %}<p class="card__text">{{ talk.excerpt | strip_html }}</p>{% endif %}
+      <div class="card__links">
+        {% if talk.slides %}<a href="{{ talk.slides }}" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint" aria-hidden="true"></i> Slides</a>{% endif %}
+        {% if talk.video %}<a href="{{ talk.video }}" target="_blank" rel="noopener"><i class="fas fa-play-circle" aria-hidden="true"></i> Video</a>{% endif %}
+        {% if talk.url %}<a href="{{ talk.url }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Event page</a>{% endif %}
+      </div>
+    </article>
+  {% endfor %}
+</div>

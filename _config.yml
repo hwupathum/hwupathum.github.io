@@ -13,6 +13,7 @@ url: https://hwupathum.github.io
 baseurl: ""
 repository: hwupathum/hwupathum.github.io
 timezone: Asia/Colombo
+future: true # show upcoming talks (and any future-dated posts)
 
 search: true
 search_full_content: true
@@ -34,8 +35,6 @@ footer:
 
 markdown: kramdown
 permalink: /:categories/:title/
-paginate: 10
-paginate_path: /page:num/
 category_archive:
   type: liquid
   path: /categories/
@@ -46,10 +45,16 @@ tag_archive:
 include:
   - _pages
 
+# Talks and projects are listed on their pages; they have no pages of their own.
+collections:
+  talks:
+    output: false
+  projects:
+    output: false
+
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag

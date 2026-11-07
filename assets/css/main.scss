@@ -1,0 +1,171 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
+
+@charset "utf-8";
+
+// ---- Theme variables (must come before the imports) ----
+$accent: #0f766e;
+$primary-color: $accent;
+$link-color: $accent;
+$link-color-hover: darken($accent, 10%);
+$link-color-visited: $accent;
+$global-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$header-font-family: $global-font-family;
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+// ---- Site styles ----
+$muted: #6b7280;
+$line: #e5e7eb;
+$soft: #f0fdfa;
+
+.page__content h2 {
+  border-bottom: none;
+  margin-top: 2.5rem;
+}
+
+.text-box {
+  background: $soft;
+  border-left: 4px solid $accent;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+
+  ul { margin: 0; padding-left: 0; list-style: none; }
+  li { margin-bottom: 0.6rem; }
+  li:last-child { margin-bottom: 0; }
+}
+
+// Recent updates
+.updates {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.updates__item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid $line;
+}
+
+.updates__icon { flex: none; }
+.updates__date { color: $muted; font-size: 0.85em; margin-right: 0.4rem; }
+.updates__title { font-weight: 600; }
+.updates__text { color: $muted; font-size: 0.9em; }
+
+// Latest articles on the home page
+.article-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-list__item { padding: 0.7rem 0; border-bottom: 1px solid $line; }
+.article-list__title { font-weight: 600; text-decoration: none; }
+.article-list__meta { color: $muted; font-size: 0.8em; }
+.article-list__excerpt { font-size: 0.9em; }
+
+// Experience timeline
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  border-left: 2px solid $line;
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: 1.25rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.25rem - 7px);
+    top: 0.35rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid $accent;
+  }
+}
+
+.timeline__period { color: $muted; font-size: 0.8em; }
+.timeline__title { font-weight: 600; }
+.timeline__org { color: $accent; font-size: 0.9em; }
+.timeline__text { font-size: 0.9em; }
+
+// Cards (talks, projects)
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid $line;
+  border-radius: 10px;
+  background: #fff;
+  transition: box-shadow 0.15s, border-color 0.15s;
+
+  &:hover {
+    border-color: $accent;
+    box-shadow: 0 4px 14px rgba(15, 118, 110, 0.12);
+  }
+
+  &[hidden] { display: none; }
+}
+
+.card__meta { display: flex; flex-wrap: wrap; gap: 0.4rem; color: $muted; font-size: 0.75em; }
+.card__badge { background: $soft; color: $accent; border-radius: 999px; padding: 0 0.6rem; font-weight: 600; }
+.page__content .card__title { margin: 0; font-size: 1.05em; }
+.card__sub { color: $accent; font-size: 0.85em; }
+.card__text { margin: 0; font-size: 0.85em; }
+
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+
+  span { border: 1px solid $line; border-radius: 4px; padding: 0 0.4rem; font-size: 0.7em; color: $muted; }
+}
+
+.card__links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.4rem;
+  font-size: 0.8em;
+
+  a { text-decoration: none; }
+}
+
+// Project filters
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filters__btn {
+  border: 1px solid $line;
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.25rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.8em;
+  cursor: pointer;
+
+  &:hover { border-color: $accent; color: $accent; }
+
+  &.is-active { background: $accent; border-color: $accent; color: #fff; }
+}

@@ -1,5 +1,5 @@
 ---
-title: Posts by Tag
+title: Articles by Tag
 layout: tags
 permalink: /tags/
 author_profile: true
