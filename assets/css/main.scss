@@ -5,22 +5,31 @@ search: false
 
 @charset "utf-8";
 
-// ---- Theme variables (must come before the imports) ----
-$accent: #0f766e;
-$primary-color: $accent;
-$link-color: $accent;
-$link-color-hover: darken($accent, 10%);
-$link-color-visited: $accent;
+// ---- Theme variables (must come before the imports; they override the dark skin) ----
+$background-color: #0f141a;
+$text-color: #e5e7eb;
+$primary-color: #2dd4bf;
+$link-color: #2dd4bf;
+$link-color-hover: #5eead4;
+$link-color-visited: #2dd4bf;
 $global-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 $header-font-family: $global-font-family;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-// ---- Site styles ----
-$muted: #6b7280;
-$line: #e5e7eb;
-$soft: #f0fdfa;
+// ---- Colour tokens ----
+:root {
+  --accent: #2dd4bf;
+  --muted: #9ca3af;
+  --line: #2d3540;
+  --soft: #12302d;
+  --surface: #1a2028;
+}
+
+$muted: var(--muted);
+$line: var(--line);
+$soft: var(--soft);
 
 .page__content h2 {
   border-bottom: none;
@@ -29,7 +38,7 @@ $soft: #f0fdfa;
 
 .text-box {
   background: $soft;
-  border-left: 4px solid $accent;
+  border-left: 4px solid var(--accent);
   border-radius: 6px;
   padding: 1rem 1.25rem;
 
@@ -89,14 +98,14 @@ $soft: #f0fdfa;
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #fff;
-    border: 3px solid $accent;
+    background: var(--surface);
+    border: 3px solid var(--accent);
   }
 }
 
 .timeline__period { color: $muted; font-size: 0.8em; }
 .timeline__title { font-weight: 600; }
-.timeline__org { color: $accent; font-size: 0.9em; }
+.timeline__org { color: var(--accent); font-size: 0.9em; }
 .timeline__text { font-size: 0.9em; }
 
 // Cards (talks, projects)
@@ -114,11 +123,11 @@ $soft: #f0fdfa;
   padding: 1rem 1.1rem;
   border: 1px solid $line;
   border-radius: 10px;
-  background: #fff;
+  background: var(--surface);
   transition: box-shadow 0.15s, border-color 0.15s;
 
   &:hover {
-    border-color: $accent;
+    border-color: var(--accent);
     box-shadow: 0 4px 14px rgba(15, 118, 110, 0.12);
   }
 
@@ -126,9 +135,9 @@ $soft: #f0fdfa;
 }
 
 .card__meta { display: flex; flex-wrap: wrap; gap: 0.4rem; color: $muted; font-size: 0.75em; }
-.card__badge { background: $soft; color: $accent; border-radius: 999px; padding: 0 0.6rem; font-weight: 600; }
+.card__badge { background: $soft; color: var(--accent); border-radius: 999px; padding: 0 0.6rem; font-weight: 600; }
 .page__content .card__title { margin: 0; font-size: 1.05em; }
-.card__sub { color: $accent; font-size: 0.85em; }
+.card__sub { color: var(--accent); font-size: 0.85em; }
 .card__text { margin: 0; font-size: 0.85em; }
 
 .card__tags {
@@ -159,13 +168,14 @@ $soft: #f0fdfa;
 .filters__btn {
   border: 1px solid $line;
   border-radius: 999px;
-  background: #fff;
+  background: var(--surface);
   padding: 0.25rem 0.9rem;
   font-family: inherit;
   font-size: 0.8em;
   cursor: pointer;
 
-  &:hover { border-color: $accent; color: $accent; }
+  &:hover { border-color: var(--accent); color: var(--accent); }
 
-  &.is-active { background: $accent; border-color: $accent; color: #fff; }
+  &.is-active { background: var(--accent); border-color: #0f141a; }
 }
+
