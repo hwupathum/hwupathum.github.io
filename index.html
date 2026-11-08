@@ -21,7 +21,7 @@ full_footer: true
   </div>
   <div class="hero__media">
     {% if site.author.avatar %}
-      <img class="portrait" src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}">
+      {% include portrait-hex.html %}
     {% else %}
       <div class="portrait portrait--placeholder">
         <svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg>
@@ -42,11 +42,6 @@ full_footer: true
           {% if it.link %}<a href="{{ it.link.url | relative_url }}"{% if it.link.url contains "://" %} target="_blank" rel="noopener"{% endif %}>{{ it.title }}</a>{% else %}{{ it.title }}{% endif %}
           {% if it.text %}<span class="updates__text">{{ it.text }}</span>{% endif %}
         </p>
-        {% if it.image %}
-          <a class="updates__thumb" href="{{ it.image | relative_url }}" target="_blank" rel="noopener">
-            <img src="{{ it.image | relative_url }}" alt="{{ it.image_alt | default: it.title }}" loading="lazy" width="72" height="96">
-          </a>
-        {% endif %}
       </li>
     {% endfor %}
   </ul>

@@ -1,0 +1,13 @@
+{%- comment -%} Hexagonal portrait with an accent outline (open in the middle of the left and right edges). {%- endcomment -%}
+<svg class="portrait-hex" viewBox="0 0 320 360" role="img" aria-label="{{ site.author.name }}">
+  <defs>
+    <clipPath id="portrait-hex-clip"><path d="M142.7,48.0Q160.0,38.0 177.3,48.0L265.7,99.0Q283.0,109.0 283.0,129.0L283.0,231.0Q283.0,251.0 265.7,261.0L177.3,312.0Q160.0,322.0 142.7,312.0L54.3,261.0Q37.0,251.0 37.0,231.0L37.0,129.0Q37.0,109.0 54.3,99.0Z"/></clipPath>
+    <mask id="portrait-hex-gaps" maskUnits="userSpaceOnUse" x="0" y="0" width="320" height="360">
+      <rect width="320" height="360" fill="#fff"/>
+      <rect x="0" y="142" width="40" height="76" fill="#000"/>
+      <rect x="280" y="142" width="40" height="76" fill="#000"/>
+    </mask>
+  </defs>
+  <image href="{{ site.author.avatar | relative_url }}" x="37.0" y="38" width="246.0" height="284" preserveAspectRatio="xMidYMid slice" clip-path="url(#portrait-hex-clip)"/>
+  <path d="M140.9,23.0Q160.0,12.0 179.1,23.0L286.4,85.0Q305.5,96.0 305.5,118.0L305.5,242.0Q305.5,264.0 286.4,275.0L179.1,337.0Q160.0,348.0 140.9,337.0L33.6,275.0Q14.5,264.0 14.5,242.0L14.5,118.0Q14.5,96.0 33.6,85.0Z" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round" mask="url(#portrait-hex-gaps)"/>
+</svg>

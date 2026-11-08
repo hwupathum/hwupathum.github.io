@@ -1,5 +1,4 @@
 # Sorted by date (newest first). Use `label` to show a less precise date than `date`.
-# Optional `image` (+ `image_alt`) shows a thumbnail that opens the full photo.
 - date: 2026-02-01
   label: Feb 2026
   title: Promoted to Associate Technical Lead at WSO2
@@ -14,8 +13,6 @@
 - date: 2026-01-15
   label: Jan 2026
   title: Received the Outstanding Technology Award at the WSO2 Awards
-  image: /assets/images/wso2-outstanding-technology-award.jpg
-  image_alt: Udara on stage at the WSO2 Awards, holding the Outstanding Technology Award certificate
 
 - date: 2025-01-01
   label: Jan 2025
