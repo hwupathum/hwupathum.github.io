@@ -1,0 +1,23 @@
+{% assign post = include.post %}
+{% include read-time.html post=post %}
+{% include source.html post=post %}
+<li class="row">
+  <time class="row__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+  <div class="row__body">
+    {% if host %}
+      <div class="row__head">
+        <h3 class="row__title"><a href="{{ post.link }}" target="_blank" rel="noopener">{{ post.title }} ↗</a></h3>
+        <a class="icon-btn icon-btn--inline" href="{{ post.url | relative_url }}" aria-label="Read the summary on this site">
+          <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+        </a>
+      </div>
+    {% else %}
+      <h3 class="row__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    {% endif %}
+    {% if post.excerpt %}<p class="row__text">{{ post.excerpt | strip_html | strip }}</p>{% endif %}
+    <div class="row__meta">
+      {% if host %}<span class="badge badge--accent">{{ host }}</span>{% else %}<span class="badge">this site</span>{% endif %}
+      <span>{{ read_time }}</span>
+    </div>
+  </div>
+</li>

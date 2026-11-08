@@ -1,6 +1,7 @@
 ---
 title: Sample article about TLS
 excerpt: Another sample article to fill the list.
+topic: TLS
 tags: [tls]
 ---
 

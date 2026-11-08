@@ -1,73 +1,51 @@
 # Built natively by GitHub Pages (no Actions workflow, no build step).
-remote_theme: mmistakes/minimal-mistakes@4.28.1
-minimal_mistakes_skin: dark # default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
-
-locale: en-US
 title: Udara Pathum
-name: Udara Pathum
 description: >-
   Articles on post-quantum cryptography, identity and access management, TLS
   and software engineering.
 url: https://hwupathum.github.io
 baseurl: ""
-repository: hwupathum/hwupathum.github.io
+lang: en
 timezone: Asia/Colombo
 future: true # show upcoming talks (and any future-dated posts)
 
-search: true
-search_full_content: true
-
 author:
   name: Udara Pathum
-  avatar: /assets/images/avatar.svg # placeholder; replace with your photo (e.g. avatar.jpg)
-  bio: Software engineer at WSO2. Writing about post-quantum cryptography, IAM and TLS.
-  links:
-    - label: GitHub
-      icon: fab fa-fw fa-github
-      url: https://github.com/hwupathum
-    - label: LinkedIn
-      icon: fab fa-fw fa-linkedin
-      url: https://www.linkedin.com/in/your-profile/ # placeholder
-    - label: Medium
-      icon: fab fa-fw fa-medium
-      url: https://medium.com/@your-handle # placeholder
+  handle: udara.pathum # shown next to the logo mark in the header
+  avatar: # placeholder until set, e.g. /assets/images/avatar.jpg
+  tagline: >-
+    Software engineer at WSO2, building identity & access management — and
+    writing about what keeps it secure.
+  intro: >-
+    [Short intro — a sentence or two on what you work on, what you write about,
+    and where you speak. Replace with your own copy.]
+  topics: [post-quantum crypto, IAM, TLS, speaking]
 
-footer:
-  links:
-    - label: GitHub
-      icon: fab fa-fw fa-github
-      url: https://github.com/hwupathum
-    - label: LinkedIn
-      icon: fab fa-fw fa-linkedin
-      url: https://www.linkedin.com/in/your-profile/ # placeholder
-    - label: Medium
-      icon: fab fa-fw fa-medium
-      url: https://medium.com/@your-handle # placeholder
+# Footer and hero links. Replace the placeholder URLs.
+links:
+  github: https://github.com/hwupathum
+  linkedin: https://www.linkedin.com/in/your-profile/ # placeholder
+  medium: https://medium.com/@your-handle # placeholder
 
+contact:
+  heading: Let’s talk identity, crypto or TLS.
+  text: "[Invite readers to reach out — for talks, collaboration or questions.]"
+
+permalink: /articles/:title/
 markdown: kramdown
-permalink: /:categories/:title/
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
 
-include:
-  - _pages
-
-# Talks and projects are listed on their pages; they have no pages of their own.
 collections:
   talks:
     output: false
   projects:
     output: false
 
+include:
+  - _pages
+
 plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
-  - jekyll-sitemap
   - jekyll-feed
+  - jekyll-sitemap
   - jekyll-seo-tag
 
 defaults:
@@ -75,15 +53,14 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: true
-      related: true
-      show_date: true
+      layout: post
   - scope:
       path: "_pages"
-      type: pages
     values:
-      layout: single
-      author_profile: true
+      layout: page
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - _templates

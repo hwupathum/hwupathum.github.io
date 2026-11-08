@@ -1,7 +1,6 @@
 # hwupathum.github.io
 
-Personal site of Udara Pathum, using the
-[Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) Jekyll theme.
+Personal site of Udara Pathum: a small custom Jekyll site (no theme).
 GitHub Pages builds it directly from `main`; there is no build step or workflow.
 
 Everything marked "Sample" is placeholder content to replace.
@@ -10,14 +9,15 @@ Everything marked "Sample" is placeholder content to replace.
 
 | Section | Edit |
 |---|---|
-| Home intro | `index.md` |
+| Name, tagline, intro, topics, photo | `_config.yml` (`author`) |
+| Footer heading and social links | `_config.yml` (`contact`, `links`) |
 | Recent updates (home) | `_data/updates.yml` |
 | Experience timeline (home) | `_data/experience.yml` |
 | Articles | `_posts/YYYY-MM-DD-slug.md` (template: `_templates/post.md`) |
 | Talks | `_talks/YYYY-MM-DD-slug.md` (template: `_templates/talk.md`) |
 | Projects | `_projects/slug.md` (template: `_templates/project.md`) |
-| Site title, bio, social links | `_config.yml` |
-| Colours, fonts, styles | `assets/css/main.scss` |
+| Colours, fonts, styles | `assets/css/main.scss` (accent is `--accent`) |
+| Page layouts | `_layouts/`, `_includes/`, `index.html` |
 
 For an article published elsewhere, set `link:` in its front matter; lists then
 open the original.

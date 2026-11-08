@@ -1,6 +1,7 @@
 ---
 title: Sample article published on Medium
 excerpt: A link post. In lists, the title opens the original article.
+topic: IAM
 tags: [identity]
 link: https://medium.com/
 ---

@@ -1,0 +1,6 @@
+{% assign project = include.project %}
+<a class="card card--link card--compact card--tight" href="{{ '/projects/' | relative_url }}">
+  <span class="card__label">{{ project.category | downcase }}</span>
+  <h3 class="card__title card__title--xs">{{ project.title }}</h3>
+  {% if project.tags %}<p class="card__text card__text--sm">{{ project.tags | join: " · " }}</p>{% endif %}
+</a>

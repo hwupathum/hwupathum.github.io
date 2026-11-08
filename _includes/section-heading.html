@@ -1,0 +1,4 @@
+<div class="section__head">
+  <h2 id="{{ include.id }}" class="section__title"><span class="section__num">{{ include.num }}</span>{{ include.title }}</h2>
+  {% if include.link %}<a class="section__more" href="{{ include.link | relative_url }}">{{ include.link_text }}</a>{% endif %}
+</div>

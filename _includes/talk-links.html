@@ -1,0 +1,12 @@
+{% assign talk = include.talk %}
+{% if talk.slides or talk.video or talk.url %}
+<div class="actions">
+  {% if include.primary and talk.url %}
+    <a class="btn btn--primary btn--sm" href="{{ talk.url }}" target="_blank" rel="noopener">Event page ↗</a>
+  {% else %}
+    {% if talk.slides %}<a class="btn btn--ghost btn--sm" href="{{ talk.slides }}" target="_blank" rel="noopener"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><line x1="12" y1="16" x2="12" y2="20"></line><line x1="8" y1="20" x2="16" y2="20"></line></svg>Slides</a>{% endif %}
+    {% if talk.video %}<a class="btn btn--ghost btn--sm" href="{{ talk.video }}" target="_blank" rel="noopener"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>Video</a>{% endif %}
+    {% if talk.url %}<a class="btn btn--ghost btn--sm" href="{{ talk.url }}" target="_blank" rel="noopener">Event page ↗</a>{% endif %}
+  {% endif %}
+</div>
+{% endif %}

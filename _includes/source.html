@@ -1,0 +1,6 @@
+{%- comment -%} Sets `host` (e.g. "medium") for a post with an external link. {%- endcomment -%}
+{%- if include.post.link -%}
+  {%- assign host = include.post.link | split: "/" | slice: 2 | first | remove: "www." | split: "." | first -%}
+{%- else -%}
+  {%- assign host = nil -%}
+{%- endif -%}

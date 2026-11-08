@@ -1,0 +1,18 @@
+{% assign talk = include.talk %}
+{% assign now = site.time | date: "%s" | plus: 0 %}
+{% assign when = talk.date | date: "%s" | plus: 0 %}
+<a class="card card--link card--compact" href="{{ '/talks/' | relative_url }}">
+  <div class="card__meta card__meta--wrap">
+    <span>{{ talk.date | date: "%d %b %Y" }}{% if talk.location %} · {{ talk.location }}{% endif %}</span>
+    {% if when >= now %}
+      <span class="accent">upcoming</span>
+    {% else %}
+      {% assign media = "" | split: "" %}
+      {% if talk.slides %}{% assign media = media | push: "slides" %}{% endif %}
+      {% if talk.video %}{% assign media = media | push: "video" %}{% endif %}
+      {% if media.size > 0 %}<span>{{ media | join: " · " }}</span>{% endif %}
+    {% endif %}
+  </div>
+  <h3 class="card__title card__title--sm">{{ talk.title }}</h3>
+  {% if talk.event %}<p class="card__text">{{ talk.event }}</p>{% endif %}
+</a>

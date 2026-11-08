@@ -1,0 +1,61 @@
+---
+layout: default
+title: Talks
+permalink: /talks/
+lead: Conference talks, meetups and webinars, with slides and recordings where available.
+---
+{% include page-head.html %}
+{% assign now = site.time | date: "%s" | plus: 0 %}
+{% assign upcoming = "" | split: "" %}
+{% assign past = "" | split: "" %}
+{% assign sorted = site.talks | sort: "date" %}
+{% for talk in sorted %}
+  {% assign when = talk.date | date: "%s" | plus: 0 %}
+  {% if when >= now %}{% assign upcoming = upcoming | push: talk %}{% else %}{% assign past = past | push: talk %}{% endif %}
+{% endfor %}
+{% assign past = past | reverse %}
+
+{% if upcoming.size > 0 %}
+<section class="container group group--first" aria-labelledby="upcoming-h">
+  <h2 class="group__title group__title--gap" id="upcoming-h">Upcoming</h2>
+  <div class="stack">
+    {% for talk in upcoming %}
+      <article class="feature">
+        <div class="feature__date">
+          <span class="feature__day">{{ talk.date | date: "%d" }}</span>
+          <span class="feature__month">{{ talk.date | date: "%b %Y" }}</span>
+          {% if talk.location %}<span class="feature__place">{{ talk.location }}</span>{% endif %}
+        </div>
+        <div class="feature__body">
+          {% if talk.event %}<span class="mono-label">{{ talk.event }}</span>{% endif %}
+          <h3 class="feature__title">{{ talk.title }}</h3>
+          {% if talk.excerpt %}<p class="row__text">{{ talk.excerpt | strip_html | strip }}</p>{% endif %}
+          {% include talk-links.html talk=talk primary=true %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if past.size > 0 %}
+<section class="container group group--last" aria-labelledby="past-h">
+  <h2 class="group__title" id="past-h">Past</h2>
+  <ul class="rows">
+    {% for talk in past %}
+      <li class="row">
+        <div class="row__date row__date--stack">
+          <span>{{ talk.date | date: "%d %b %Y" }}</span>
+          {% if talk.location %}<span class="row__place">{{ talk.location }}</span>{% endif %}
+        </div>
+        <div class="row__body row__body--tight">
+          {% if talk.event %}<span class="mono-label">{{ talk.event }}</span>{% endif %}
+          <h3 class="row__title row__title--plain">{{ talk.title }}</h3>
+          {% if talk.excerpt %}<p class="row__text">{{ talk.excerpt | strip_html | strip }}</p>{% endif %}
+          {% include talk-links.html talk=talk %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

@@ -1,0 +1,25 @@
+---
+layout: default
+title: Articles
+permalink: /articles/
+lead: Writing on post-quantum cryptography, identity & access management and TLS — newest first. For posts published elsewhere, the title opens the original; the link icon opens the summary here.
+---
+{% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% capture filters %}
+<div class="filters" role="group" aria-label="Filter by year" data-filters="article-years">
+  <button type="button" class="filters__btn" aria-pressed="true" data-filter="all">All · {{ site.posts.size }}</button>
+  {% for year in years %}<button type="button" class="filters__btn" aria-pressed="false" data-filter="{{ year.name }}">{{ year.name }} · {{ year.size }}</button>{% endfor %}
+</div>
+{% endcapture %}
+{% include page-head.html filters=filters %}
+
+<div class="container section--list" id="article-years">
+  {% for year in years %}
+    <section class="group" aria-labelledby="y{{ year.name }}" data-topic="{{ year.name }}">
+      <h2 class="group__title" id="y{{ year.name }}">{{ year.name }}</h2>
+      <ul class="rows">
+        {% for post in year.items %}{% include article-row.html post=post %}{% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</div>

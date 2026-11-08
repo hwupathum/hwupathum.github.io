@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{% include read-time.html post=page %}
+<article class="container section section--first post">
+  <a class="back-link" href="{{ '/articles/' | relative_url }}">← All articles</a>
+  <p class="post__meta">
+    <span class="post__topic">{{ page.topic | default: page.tags.first | default: "Article" }}</span>
+    <span>{{ page.date | date: "%d %b %Y" }} · {{ read_time }} min read</span>
+  </p>
+  <h1 class="post__title">{{ page.title }}</h1>
+  <div class="prose">
+    {{ content }}
+  </div>
+  {% if page.link %}
+    {% assign host = page.link | split: "/" | slice: 2 | first | remove: "www." %}
+    <p><a class="btn btn--primary" href="{{ page.link }}" target="_blank" rel="noopener">Read the full article on {{ host }} ↗</a></p>
+  {% endif %}
+  {% if page.tags.size > 0 %}
+    <ul class="pills post__tags">
+      {% for tag in page.tags %}<li class="pill">{{ tag }}</li>{% endfor %}
+    </ul>
+  {% endif %}
+</article>

@@ -1,0 +1,37 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+lead: Things I’ve built or contributed to. Filter by category below.
+---
+{% assign projects = site.projects | sort: "order" %}
+{% assign categories = projects | group_by: "category" %}
+{% capture filters %}
+<div class="filters" role="group" aria-label="Filter by category" data-filters="project-grid">
+  <button type="button" class="filters__btn" aria-pressed="true" data-filter="all">All · {{ projects.size }}</button>
+  {% for cat in categories %}<button type="button" class="filters__btn" aria-pressed="false" data-filter="{{ cat.name | slugify }}">{{ cat.name }} · {{ cat.size }}</button>{% endfor %}
+</div>
+{% endcapture %}
+{% include page-head.html filters=filters %}
+
+<section class="container group--last" aria-label="Project list">
+  <div class="grid grid--fill" id="project-grid">
+    {% for project in projects %}
+      <article class="card card--surface" data-topic="{{ project.category | slugify }}">
+        <div class="card__meta card__meta--wrap">
+          <span class="accent">{{ project.category }}</span>
+          {% if project.period %}<span>{{ project.period }}</span>{% endif %}
+        </div>
+        <h2 class="card__title card__title--lg">{{ project.title }}</h2>
+        {% if project.excerpt %}<p class="row__text">{{ project.excerpt | strip_html | strip }}</p>{% endif %}
+        {% if project.tags %}<ul class="tags">{% for t in project.tags %}<li class="badge badge--sm">{{ t }}</li>{% endfor %}</ul>{% endif %}
+        {% if project.repo or project.url %}
+          <div class="actions actions--foot">
+            {% if project.repo %}<a class="btn btn--ghost btn--sm" href="{{ project.repo }}" target="_blank" rel="noopener"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>Code</a>{% endif %}
+            {% if project.url %}<a class="btn btn--ghost btn--sm" href="{{ project.url }}" target="_blank" rel="noopener">Website ↗</a>{% endif %}
+          </div>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>
