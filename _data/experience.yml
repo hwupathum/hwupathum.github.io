@@ -1,14 +1,30 @@
-# Shown as a timeline on the home page, in this order.
-- period: 20XX — Present
-  title: Sample role — Software Engineer
-  org: Sample company
-  text: One or two lines about what you work on.
+# Shown as a timeline on the home page, in this order. The first entry gets the highlighted dot.
+- period: Feb 2026 — now
+  title: Associate Technical Lead
+  org: WSO2
 
-- period: 20XX — 20XX
-  title: Sample role — Intern
-  org: Sample company
-  text: One or two lines about what you worked on.
+- period: Feb 2024 — Feb 2026
+  title: Senior Software Engineer
+  org: WSO2
 
-- period: 20XX — 20XX
-  title: Sample degree — BSc in Computer Science
-  org: Sample university
+- period: May 2022 — Feb 2024
+  title: Software Engineer
+  org: WSO2
+
+- period: Oct 2020 — May 2021
+  title: Software Engineer Intern
+  org: Yaala Labs
+
+- period: Jul 2019 — Sep 2020
+  title: Software Engineering Trainee
+  org: Fcode Labs
+  text: Part-time client projects with React, Flutter and Firebase, using agile practices.
+
+- period: 2025 — 2027
+  title: MSc in Computer Science
+  org: University of Moratuwa
+  text: In progress.
+
+- period: 2017 — 2022
+  title: BSc Engineering (Hons), Computer Science and Engineering
+  org: University of Moratuwa

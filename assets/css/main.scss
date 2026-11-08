@@ -246,6 +246,19 @@ img { max-width: 100%; height: auto; }
 
 .updates__text { display: block; font-size: 15px; color: var(--muted); }
 
+.updates__thumb {
+  flex: 0 0 auto;
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  transition: border-color 0.15s;
+
+  &:hover { border-color: var(--accent); }
+
+  img { display: block; width: 72px; height: 96px; object-fit: cover; }
+}
+
 // Cards
 .grid { display: grid; gap: 20px; }
 .grid--3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }

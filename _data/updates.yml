@@ -1,25 +1,43 @@
-# Newest first is not required; the list is sorted by date.
-# type picks the icon: article, talk, code, release, award, media (anything else gets 📌).
-- date: 2026-11-07
-  type: article
-  title: Sample update — published a new article
-  text: One line describing the update.
-  link:
-    url: /articles/
-    label: "[Read]"
+# Sorted by date (newest first). Use `label` to show a less precise date than `date`.
+# Optional `image` (+ `image_alt`) shows a thumbnail that opens the full photo.
+- date: 2026-02-01
+  label: Feb 2026
+  title: Promoted to Associate Technical Lead at WSO2
 
-- date: 2026-10-15
-  type: talk
-  title: Sample update — talk accepted at a conference
-  text: Conference name, city.
+- date: 2026-06-04
+  label: Jun 2026
+  title: Published a preprint, “Post-Quantum Migration Strategy for RSA Encryption”
+  link:
+    url: https://eprint.iacr.org/2026/1172
+    label: ePrint
+
+- date: 2025-06-01
+  label: 2025
+  title: Received the Outstanding Technology Award at the WSO2 Awards
+  image: /assets/images/wso2-outstanding-technology-award.jpg
+  image_alt: Udara on stage at the WSO2 Awards, holding the Outstanding Technology Award certificate
+
+- date: 2025-01-01
+  label: Jan 2025
+  title: Started an MSc in Computer Science at the University of Moratuwa
+
+- date: 2025-10-30
+  label: Oct 2025
+  title: Spoke at the PKI Consortium PQC Conference in Kuala Lumpur
   link:
     url: /talks/
-    label: "[Details]"
+    label: Talk
 
-- date: 2026-09-01
-  type: code
-  title: Sample update — released an open-source tool
-  text: What it does in one line.
+- date: 2026-03-10
+  label: Mar 2026
+  title: Guest on Identerati Office Hours, talking post-quantum cryptography in IAM
   link:
-    url: https://github.com/hwupathum
-    label: "[GitHub]"
+    url: /talks/
+    label: Talk
+
+- date: 2025-08-04
+  label: Aug 2025
+  title: Spoke at the Java Colombo Meetup on post-quantum cryptography in practice
+  link:
+    url: /talks/
+    label: Talk

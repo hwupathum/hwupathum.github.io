@@ -37,11 +37,16 @@ full_footer: true
   <ul class="updates">
     {% for it in updates limit: 5 %}
       <li class="updates__item">
-        <time datetime="{{ it.date | date_to_xmlschema }}">{{ it.date | date: "%d %b %Y" }}</time>
+        <time datetime="{{ it.date | date_to_xmlschema }}">{% if it.label %}{{ it.label }}{% else %}{{ it.date | date: "%d %b %Y" }}{% endif %}</time>
         <p>
           {% if it.link %}<a href="{{ it.link.url | relative_url }}"{% if it.link.url contains "://" %} target="_blank" rel="noopener"{% endif %}>{{ it.title }}</a>{% else %}{{ it.title }}{% endif %}
           {% if it.text %}<span class="updates__text">{{ it.text }}</span>{% endif %}
         </p>
+        {% if it.image %}
+          <a class="updates__thumb" href="{{ it.image | relative_url }}" target="_blank" rel="noopener">
+            <img src="{{ it.image | relative_url }}" alt="{{ it.image_alt | default: it.title }}" loading="lazy" width="72" height="96">
+          </a>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>

@@ -12,24 +12,25 @@ future: true # show upcoming talks (and any future-dated posts)
 author:
   name: Udara Pathum
   handle: udara.pathum # shown next to the logo mark in the header
-  avatar: # placeholder until set, e.g. /assets/images/avatar.jpg
+  avatar: /assets/images/udara.jpg
   tagline: >-
-    Software engineer at WSO2, building identity & access management — and
-    writing about what keeps it secure.
+    Associate Technical Lead at WSO2, building identity & access management —
+    and working on what keeps it secure in a post-quantum world.
   intro: >-
-    [Short intro — a sentence or two on what you work on, what you write about,
-    and where you speak. Replace with your own copy.]
-  topics: [post-quantum crypto, IAM, TLS, speaking]
+    I build secure, scalable backend systems in Java and Go. I'm drawn to
+    cryptography, secure protocol design and quantum computing, and I write
+    about post-quantum security along the way.
+  topics: [post-quantum security, identity & access, Java, Go]
 
-# Footer and hero links. Replace the placeholder URLs.
+# Footer and hero links.
 links:
   github: https://github.com/hwupathum
-  linkedin: https://www.linkedin.com/in/your-profile/ # placeholder
-  medium: https://medium.com/@your-handle # placeholder
+  linkedin: https://www.linkedin.com/in/hwupathum/
+  medium: https://medium.com/@hwupathum
 
 contact:
-  heading: Let’s talk identity, crypto or TLS.
-  text: "[Invite readers to reach out — for talks, collaboration or questions.]"
+  heading: Let’s talk identity, crypto or post-quantum security.
+  text: Reach out about talks, collaboration, or anything in this space.
 
 permalink: /articles/:title/
 markdown: kramdown
