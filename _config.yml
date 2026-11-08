@@ -1,16 +1,19 @@
 # Built natively by GitHub Pages (no Actions workflow, no build step).
 title: Udara Pathum
+tagline: Post-quantum security & identity # used in the home page <title>
 description: >-
-  Articles on post-quantum cryptography, identity and access management, TLS
-  and software engineering.
+  Udara Pathum, Associate Technical Lead at WSO2, writes and speaks about
+  post-quantum cryptography, identity and access management, and TLS.
 url: https://hwupathum.github.io
 baseurl: ""
 lang: en
+locale: en_US
 timezone: Asia/Colombo
 future: true # show upcoming talks (and any future-dated posts)
 
 author:
   name: Udara Pathum
+  url: https://hwupathum.github.io/
   handle: udara.pathum # shown next to the logo mark in the header
   avatar: /assets/images/udara.jpg
   tagline: >-
@@ -32,6 +35,17 @@ contact:
   heading: Let’s talk identity, crypto or post-quantum security.
   text: Reach out about talks, collaboration, or anything in this space.
 
+# SEO and link previews (jekyll-seo-tag)
+social:
+  name: Udara Pathum
+  links:
+    - https://github.com/hwupathum
+    - https://www.linkedin.com/in/hwupathum/
+    - https://medium.com/@hwupathum
+# Optional: paste the code from Google Search Console's HTML-tag verification.
+# webmaster_verifications:
+#   google: XXXXXXXX
+
 permalink: /articles/:title/
 markdown: kramdown
 
@@ -50,6 +64,10 @@ plugins:
   - jekyll-seo-tag
 
 defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/social-card.png # link-preview image for every page
   - scope:
       path: ""
       type: posts
