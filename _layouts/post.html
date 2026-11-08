@@ -12,8 +12,8 @@ layout: default
     {{ content }}
   </div>
   {% if page.link %}
-    {% assign host = page.link | split: "/" | slice: 2 | first | remove: "www." %}
-    <p><a class="btn btn--primary" href="{{ page.link }}" target="_blank" rel="noopener">Read the full article on {{ host }} ↗</a></p>
+    {% include source.html post=page %}
+    <p><a class="btn btn--primary" href="{{ page.link }}" target="_blank" rel="noopener">Read the full article on {{ host_label }} ↗</a></p>
   {% endif %}
   {% if page.tags.size > 0 %}
     <ul class="pills post__tags">

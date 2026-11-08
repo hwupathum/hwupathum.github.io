@@ -1,7 +1,7 @@
 {% assign post = include.post %}
 {% include source.html post=post %}
 <a class="card card--link" href="{{ post.link | default: post.url | relative_url }}"{% if post.link %} target="_blank" rel="noopener"{% endif %}>
-  <div class="card__meta"><span>{{ post.topic | default: post.tags.first | default: "Article" }}</span><span>{% if host %}{{ host | capitalize }} ↗{% else %}On this site{% endif %}</span></div>
+  <div class="card__meta"><span>{{ post.topic | default: post.tags.first | default: "Article" }}</span><span>{% if host %}{{ host_label }} ↗{% else %}On this site{% endif %}</span></div>
   <h3 class="card__title">{{ post.title }}</h3>
   {% if post.excerpt %}<p class="card__text">{{ post.excerpt | strip_html | strip | truncate: 160 }}</p>{% endif %}
   <span class="card__foot">{{ post.date | date: "%d %b %Y" }}</span>

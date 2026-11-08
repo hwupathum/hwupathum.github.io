@@ -1,6 +1,13 @@
-{%- comment -%} Sets `host` (e.g. "medium") for a post with an external link. {%- endcomment -%}
+{%- comment -%} Sets `host` (e.g. "medium") and `host_label` (e.g. "Medium") for a post with an external link. {%- endcomment -%}
 {%- if include.post.link -%}
   {%- assign host = include.post.link | split: "/" | slice: 2 | first | remove: "www." | split: "." | first -%}
+  {%- case host -%}
+    {%- when "linkedin" -%}{%- assign host_label = "LinkedIn" -%}
+    {%- when "wso2" -%}{%- assign host_label = "WSO2" -%}
+    {%- when "eprint" -%}{%- assign host_label = "ePrint" -%}
+    {%- else -%}{%- assign host_label = host | capitalize -%}
+  {%- endcase -%}
 {%- else -%}
   {%- assign host = nil -%}
+  {%- assign host_label = nil -%}
 {%- endif -%}
