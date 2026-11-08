@@ -1,8 +1,0 @@
----
-title: Sample article hosted on this site
-excerpt: A short summary shown in lists and search results.
-topic: PQC
-tags: [post-quantum-cryptography]
----
-
-This is a sample article. Replace it with your own, or delete it.

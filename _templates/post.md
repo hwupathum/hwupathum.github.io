@@ -5,7 +5,6 @@ excerpt: One or two sentences shown on the cards and in search results.
 topic: PQC # short label on the card, e.g. PQC, IAM, TLS; also drives the Articles filter
 tags:
   - post-quantum-cryptography
-# read_time: 8   # minutes; otherwise estimated from the body
 #
 # Published somewhere else (Medium, the WSO2 blog, ...)? Set link. Cards then
 # open the original, and the body below acts as a short summary page.
